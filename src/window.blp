@@ -33,19 +33,29 @@ Box Main {
       icon-name: "xyz.desyncd.Ones";
     }
     Label {
-      label: _("\nBasic ASCII <--> Binary Converter\n\n");
+      label: _("\nBasic ASCII ↔ Binary Converter\n\n");
     }
   }
 
   FlowBox BinaryInput {
     halign: center;
     selection-mode: none;
+
     Label {
       label: _("Text Input");
+      width-request: 300; // so this seems to make everything else take the same size.
     }
 
     Entry Ascii {
       placeholder-text: "Text";
+    }
+
+    Button AsciiButton {
+      name: "Ascii";
+      label: _("Text to Binary");
+      styles [
+        "suggested-action"
+      ]
     }
 
     Label {
@@ -55,6 +65,11 @@ Box Main {
     Entry Binary {
       placeholder-text: "Binary";
     }
+
+    Button BinaryButton {
+      name: "Binary";
+      label: _("Binary to Text");
+    }
   }
 }
 
@@ -63,16 +78,6 @@ Box Main {
 
 menu primary_menu {
   section {
-    item {
-      label: _("_Preferences");
-      action: "app.preferences";
-    }
-
-    item {
-      label: _("_Keyboard Shortcuts");
-      action: "win.show-help-overlay";
-    }
-
     item {
       label: _("_About Ones");
       action: "app.about";

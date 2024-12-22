@@ -1,6 +1,6 @@
 /* window.js
  *
- * Copyright 2024 Henry
+ * Copyright 2024 Desync
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

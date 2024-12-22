@@ -3,7 +3,7 @@ using Adw 1;
 
 template $OnesWindow: Adw.ApplicationWindow {
   title: _("Ones");
-  default-width: 800;
+  //default-width: 800;
   default-height: 600;
 
   content: Adw.ToolbarView {
@@ -17,22 +17,30 @@ template $OnesWindow: Adw.ApplicationWindow {
         menu-model: primary_menu;
       }
     }
+
+
+// this is possibly the most unnecessary and redundant code every written, but I'm learning blueprint okay
 Box Main {
   orientation: vertical;
   valign: center;
   halign: center;
 
-  Box MainText {
+  FlowBox MainText {
+    selection-mode: none;
     name: "MainText";
     halign: center;
-
+    Image {
+      pixel-size: 128;
+      icon-name: "xyz.desyncd.Ones";
+    }
     Label {
-      label: _("Basic ASCII <--> Binary Converter\n\n");
+      label: _("\nBasic ASCII <--> Binary Converter\n\n");
     }
   }
 
   FlowBox BinaryInput {
     halign: center;
+    selection-mode: none;
     Label {
       label: _("Text Input");
     }
@@ -47,6 +55,7 @@ Box Main {
 
     Entry Binary {
       placeholder-text: "Binary";
+      //columns: 20;
     }
   }
 }

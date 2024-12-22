@@ -1,6 +1,6 @@
 /* main.js
  *
- * Copyright 2024 Henry
+ * Copyright 2024 Desync
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,10 +43,10 @@ export const OnesApplication = GObject.registerClass(
             const show_about_action = new Gio.SimpleAction({name: 'about'});
             show_about_action.connect('activate', action => {
                 let aboutParams = {
-                    application_name: 'ones',
+                    application_name: '1.0.0',
                     application_icon: 'xyz.desyncd.Ones',
                     developer_name: 'Desync',
-                    version: '0.1.0',
+                    version: '1.0.0',
                     developers: [
                         'Desync'
                     ],
@@ -75,3 +75,14 @@ export function main(argv) {
     const application = new OnesApplication();
     return application.runAsync(argv);
 }
+
+// Logic
+function toBinary(text) {
+  var output = "";
+  var input = "eggs"
+  for (var i = 0; i < input.length; i++) {
+      output += input[i].charCodeAt(0).toString(2) + " ";
+  }
+  console.log(output)
+}
+toBinary("12")

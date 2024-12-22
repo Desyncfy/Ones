@@ -31,13 +31,13 @@
     ],
     "modules" : [
         {
-            "name" : "ones",
+            "name" : "1.0.0",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "file:///home/desync/Projects"
+                    "url" : "file:///home/henry/Projects"
                 }
             ]
         }

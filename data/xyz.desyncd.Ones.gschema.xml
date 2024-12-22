@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="ones">
+<schemalist gettext-domain="1.0.0">
 	<schema id="xyz.desyncd.Ones" path="/xyz/desyncd/Ones/">
 	</schema>
 </schemalist>

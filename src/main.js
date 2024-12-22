@@ -78,11 +78,14 @@ export function main(argv) {
 
 // Logic
 function toBinary(text) {
-  var output = "";
-  var input = "eggs"
-  for (var i = 0; i < input.length; i++) {
-      output += input[i].charCodeAt(0).toString(2) + " ";
+  let output = '';
+    for (let i = 0; i < text.length; i++) {
+      output += text[i].charCodeAt(0).toString(2) + " ";
   }
-  console.log(output)
+  return output;
 }
-toBinary("12")
+
+function toText(text) {
+  output = text.split(' ').map(bin => String.fromCharCode(parseInt(bin, 2))).join('');
+  return output;
+}

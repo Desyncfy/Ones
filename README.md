@@ -1,3 +1,5 @@
-# ones
+# Ones
 
-A description of this project.
+Simple Binary Conversion App for Gnome.
+
+Tested on Gnome 47 & Fedora 41

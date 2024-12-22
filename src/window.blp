@@ -1,0 +1,74 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $OnesWindow: Adw.ApplicationWindow {
+  title: _("Ones");
+  default-width: 800;
+  default-height: 600;
+
+  content: Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [end]
+      MenuButton {
+        primary: true;
+        icon-name: "open-menu-symbolic";
+        tooltip-text: _("Main Menu");
+        menu-model: primary_menu;
+      }
+    }
+Box Main {
+  orientation: vertical;
+  valign: center;
+  halign: center;
+
+  Box MainText {
+    name: "MainText";
+    halign: center;
+
+    Label {
+      label: _("Basic ASCII <--> Binary Converter\n\n");
+    }
+  }
+
+  FlowBox BinaryInput {
+    halign: center;
+    Label {
+      label: _("Text Input");
+    }
+
+    Entry Ascii {
+      placeholder-text: "Text";
+    }
+
+    Label {
+      label: _("Binary");
+    }
+
+    Entry Binary {
+      placeholder-text: "Binary";
+    }
+  }
+}
+
+  };
+}
+
+menu primary_menu {
+  section {
+    item {
+      label: _("_Preferences");
+      action: "app.preferences";
+    }
+
+    item {
+      label: _("_Keyboard Shortcuts");
+      action: "win.show-help-overlay";
+    }
+
+    item {
+      label: _("_About Ones");
+      action: "app.about";
+    }
+  }
+}

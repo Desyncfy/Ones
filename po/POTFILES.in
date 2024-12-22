@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/xyz.desyncd.Ones.desktop.in
+data/xyz.desyncd.Ones.metainfo.xml.in
+data/xyz.desyncd.Ones.gschema.xml
+src/main.js
+src/window.js
+src/window.blp

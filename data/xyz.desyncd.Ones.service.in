@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=xyz.desyncd.Ones
+Exec=@bindir@/xyz.desyncd.Ones --gapplication-service

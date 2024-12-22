@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=ones
+Exec=xyz.desyncd.Ones
+Icon=xyz.desyncd.Ones
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

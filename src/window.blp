@@ -41,13 +41,10 @@ Box Main {
     halign: center;
     selection-mode: none;
 
-    Label {
-      label: _("Text Input");
-      width-request: 300; // so this seems to make everything else take the same size.
-    }
-
     Entry Ascii {
       placeholder-text: "Text";
+      width-request: 300;
+      margin-top: 24;
     }
 
     Button AsciiButton {
@@ -58,12 +55,10 @@ Box Main {
       ]
     }
 
-    Label {
-      label: _("Binary");
-    }
-
     Entry Binary {
       placeholder-text: "Binary";
+      width-request: 300;
+      margin-top: 24;
     }
 
     Button BinaryButton {

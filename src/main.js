@@ -22,6 +22,8 @@ import GObject from 'gi://GObject';
 import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk?version=4.0';
 import Adw from 'gi://Adw?version=1';
+import GLib from 'gi://GLib';
+
 
 import { OnesWindow } from './window.js';
 
@@ -77,15 +79,28 @@ export function main(argv) {
 }
 
 // Logic
-function toBinary(text) {
-  let output = '';
-    for (let i = 0; i < text.length; i++) {
-      output += text[i].charCodeAt(0).toString(2) + " ";
+function toBinary() {
+  const text = workbench.builder.get_object("Ascii").text;
+  let output = "";
+  for (let i = 0; i < text.length; i++) {
+    output += text[i].charCodeAt(0).toString(2) + " ";
   }
-  return output;
+  workbench.builder.get_object("Binary").text = output;
+  workbench.builder.get_object("Ascii").text = "";
 }
 
-function toText(text) {
-  output = text.split(' ').map(bin => String.fromCharCode(parseInt(bin, 2))).join('');
-  return output;
+function toText() {
+  let output = workbench.builder
+    .get_object("Binary")
+    .text.split(" ")
+    .map((bin) => String.fromCharCode(parseInt(bin, 2)))
+    .join("");
+  workbench.builder.get_object("Ascii").text = output;
+  workbench.builder.get_object("Binary").text = "";
 }
+
+const textButton = workbench.builder.get_object("AsciiButton");
+const binaryButton = workbench.builder.get_object("BinaryButton");
+
+textButton.connect_after("clicked", toBinary);
+binaryButton.connect_after("clicked", toText);
